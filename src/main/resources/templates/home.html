@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Lista de Alumnos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>RUT</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Materias</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="alumno : ${alumnos}">
+                <td th:text="${alumno.id}"></td>
+                <td th:text="${alumno.rut}"></td>
+                <td th:text="${alumno.nombre}"></td>
+                <td th:text="${alumno.direccion}"></td>
+                <td th:each="materia : ${alumno.materiaList}" th:text="${materia.nombre}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

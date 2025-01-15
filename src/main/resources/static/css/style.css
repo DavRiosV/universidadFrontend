@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fondo claro */
+}
+
+/* Estilo para el navbar personalizado */
+.custom-navbar {
+    background-color: #004aad; /* Azul oscuro */
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-navbar .navbar-brand {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.custom-navbar .navbar-brand:hover {
+    color: #ffdd00; /* Amarillo */
+}
+
+.custom-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.custom-navbar ul li {
+    margin-left: 1rem;
+}
+
+.custom-navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-navbar ul li a:hover {
+    background-color: #ffdd00; /* Amarillo */
+    color: #004aad; /* Azul oscuro */
+    border-radius: 5px;
+}
+
+/* Espaciado inferior del contenido principal */
+.main-container {
+    padding: 2rem;
+}
+
+/* Footer personalizado */
+footer {
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffdd00; /* Amarillo */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
