@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("title", "Universidad Front");
-        model.addAttribute("message", "Bienvenido al sistema de gestión de calificaciones.");
-        return "index";
+    public String homeRedirect() {
+        return "redirect:/home";
     }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        model.addAttribute("message", "Bienvenido al Sistema de Calificaciones");
+        System.out.print("Aqui estoy!!!!!");
+        return "home";}
 }

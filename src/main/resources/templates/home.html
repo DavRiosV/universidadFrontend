@@ -1,26 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Sistema de Calificaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 <body>
-    <h1>Lista de Alumnos</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>RUT</th>
-                <th>Nombre</th>
-                <th>Dirección</th>
-                <th>Materias</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="alumno : ${alumnos}">
-                <td th:text="${alumno.id}"></td>
-                <td th:text="${alumno.rut}"></td>
-                <td th:text="${alumno.nombre}"></td>
-                <td th:text="${alumno.direccion}"></td>
-                <td th:each="materia : ${alumno.materiaList}" th:text="${materia.nombre}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <script type="module" src="/js/script.js"></script>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Universidad de Los Andes</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/dashboard">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/alumnos">Alumnos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/calificaciones">Calificaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container mt-5">
+        <h1 class="text-center">Bienvenido al Sistema de Calificaciones</h1>
+        <p class="text-center">Accede a las funcionalidades del sistema desde el menú.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start mt-5">
+        <div class="text-center p-3">
+            © 2025 Universidad de Los Andes. Drv Todos los derechos reservados.
+        </div>
+    </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

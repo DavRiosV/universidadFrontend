@@ -1,6 +1,8 @@
 package com.drvservicios.universidadFront.services;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,11 +13,13 @@ import java.util.List;
 
 @Service
 public class AlumnoService {
-    private final RestTemplate restTemplate = new RestTemplate();
-    private final String BACKEND_URL = "http://localhost:8080/api/alumnos";
+    @Autowired
+    private RestTemplate restTemplate;
+
+    private final String baseUrl = "http://localhost:8080/api/alumnos";
 
     public List<AlumnoDTO> findAll() {
-        AlumnoDTO[] alumnos = restTemplate.getForObject(BACKEND_URL, AlumnoDTO[].class);
-        return Arrays.asList(alumnos);
+        ResponseEntity<AlumnoDTO[]> response = restTemplate.getForEntity(baseUrl, AlumnoDTO[].class);
+        return Arrays.asList(response.getBody());
     }
 }

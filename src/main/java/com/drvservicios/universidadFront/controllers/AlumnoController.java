@@ -13,9 +13,9 @@ public class AlumnoController {
     @Autowired
     private AlumnoService alumnoService;
 
-    @GetMapping("/home")
+    @GetMapping("/alumnos")
     public String home(Model model) {
         model.addAttribute("alumnos", alumnoService.findAll());
-        return "home";
+        return "home"; // Asegúrate de que este archivo HTML exista y sea el adecuado
     }
 }

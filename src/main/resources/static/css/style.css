@@ -1,17 +1,35 @@
 @charset "UTF-8";
 
-/* Estilo general del cuerpo */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Fondo claro */
+    background-image: url('/img/abstract-bluish-paint-background-wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center; 
+    color: white; 
 }
 
+/* Ajustes adicionales para mejorar la legibilidad */
+.container-main {
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor principal */
+.main-container {
+    padding: 2rem;
+    flex: 1;
+}
 /* Estilo para el navbar personalizado */
 .custom-navbar {
     background-color: #004aad; /* Azul oscuro */
-    color: white;
+    color: #000000;
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
@@ -55,19 +73,15 @@ body {
     border-radius: 5px;
 }
 
-/* Espaciado inferior del contenido principal */
-.main-container {
-    padding: 2rem;
-}
-
 /* Footer personalizado */
 footer {
-    background-color: #004aad;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
     text-align: center;
     padding: 1rem 0;
     font-size: 0.9rem;
-}
+    width: 100%;
+    flex-shrink: 0; 
 
 footer a {
     color: #ffdd00; /* Amarillo */
@@ -76,4 +90,5 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
 }
