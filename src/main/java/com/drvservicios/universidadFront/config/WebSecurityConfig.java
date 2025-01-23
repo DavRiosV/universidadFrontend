@@ -10,18 +10,19 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()  // Deshabilitar CSRF
+        http
+            .csrf().disable()
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/login", "/css/**", "/img/**", "/js/**").permitAll()  // Permitir acceso sin autenticación a estas rutas
-                .anyRequest().authenticated()  // Rutas protegidas requieren autenticación
+                .requestMatchers("/auth/login", "/auth/signup", "/css/**", "/img/**").permitAll()
+                .anyRequest().authenticated()
             )
             .formLogin(form -> form
-                .loginPage("/login")
-                .defaultSuccessUrl("/home")
+                .loginPage("/auth/login")
                 .permitAll()
             )
             .logout(logout -> logout
-                .logoutSuccessUrl("/login")
+                .logoutUrl("/auth/logout")
+                .logoutSuccessUrl("/auth/login")
                 .permitAll()
             );
         return http.build();

@@ -9,12 +9,12 @@ public class HomeController {
 
     @GetMapping("/")
     public String homeRedirect() {
-        return "redirect:/home";
+        return "redirect:/index";
     }
 
-    @GetMapping("/home")
+    @GetMapping("/index")
     public String home(Model model) {
         model.addAttribute("message", "Bienvenido al Sistema de Calificaciones");
         System.out.print("Aqui estoy!!!!!");
-        return "home";}
+        return "index";}
 }
